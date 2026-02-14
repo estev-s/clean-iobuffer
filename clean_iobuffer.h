@@ -1,10 +1,14 @@
 /***********************************************************
 
 Title:
-	Buffer I/O Cleaner - "clean_iobuffer.h"
+	Buffer I/O Cleaner - clean_iobuffer.h
+
 About:
 	Custom Header to prevent buffer overflow
 	in input/output operations.
+
+License:
+	The Unlicense - please refer to <https://unlicense.org>
 
 Author:
 	Estevão Salles <mail.estevao.s@gmail.com>
@@ -14,18 +18,31 @@ Author:
 /*
  			Usage Guide:
  
-.. code-example:: c
+.. code-example1:: c
+	{
+		char input[100] = {0};
+		printf("type your input: ");
+		scanf(" %c", &input);
+		clean_io(input);
 
-	char input;
-	printf("type your input: ");
-	scanf("%c", &input);
-	clean_io(input);
+	}
+
+.. code-example2:: c
+	{
+		char input[100] = {0};
+		char answer = '\0';
+		printf("type the answer: ");
+		fgets(input, sizeof(input), stdin);
+		sscanf(input, " %c", &answer);
+		clean_io(answer);
+	}
+
 
 - The clean_io() will run the cleaning function based on the 
-type of the input parsed.
-- Ideally, you should call it right after every scanf() function in
-your code.
+data type of the variables and the get/parse method.
 
+- Ideally, you should call it right after every user input in
+your code. It will analyze the buffer and clean only if there's garbage.
 */
 
 ifndef CLEAN_IOBUFFER_H
@@ -39,7 +56,7 @@ define CLEAN_IOBUFFER_H
 int clean_short(input);
 int clean_long(input);
 
-// Main Start
+// --- Main ---
 int clean_io(char)
 {
 	/* This will analyze the variable parsed
@@ -63,7 +80,7 @@ int clean_io(char)
 	}
 
 }
-// Main End
+// --- Main End ---
 
 // Functions Logic
 
