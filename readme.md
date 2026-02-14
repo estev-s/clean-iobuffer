@@ -7,7 +7,7 @@ This header file serves as a cleaner function for the input stream buffer in a u
 **Why?**
 
 The ultimate goal of this is to make it easily callable anywhere you need in your code, without worrying about
-the method you used to handle user inputs. Removing the need to create a custom cleaner for every program and/ormethod.
+the method you used to handle user inputs. Removing the need to create a custom cleaner for every program and/or method.
 
 **Usage:**
 
@@ -15,7 +15,7 @@ There are instructions inside the .h file.
 
 - If the header is placed inside system headers directory:
 
-    #include clean_iobuffer.h;
+    #include <clean_iobuffer.h>;
 
 - If the header is placed inside a /libs in your project's directory:
 
