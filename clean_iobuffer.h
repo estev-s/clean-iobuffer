@@ -18,7 +18,7 @@ Author:
 /*
  			Usage Guide:
  
-.. code-example1:: c
+.. code-example1:: c (not ideal way)
 	{
 		char input[100] = {0};
 		printf("type your input: ");
@@ -27,19 +27,19 @@ Author:
 
 	}
 
-.. code-example2:: c
+.. code-example2:: c (better way: get, clean then parse)
 	{
 		char input[100] = {0};
 		char answer = '\0';
 		printf("type the answer: ");
 		fgets(input, sizeof(input), stdin);
+		clean_io(input);
 		sscanf(input, " %c", &answer);
-		clean_io(answer);
 	}
 
 
 - The clean_io() will run the cleaning function based on the 
-data type of the variables and the get/parse method.
+data type of the variable and the get/parse method.
 
 - Ideally, you should call it right after every user input in
 your code. It will analyze the buffer and clean only if there's garbage.
