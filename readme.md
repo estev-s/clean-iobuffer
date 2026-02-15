@@ -23,6 +23,6 @@ There are instructions inside the .h file.
 
 - Calling:
 
-    clean_io(<variable_name>);
+    clean_io();
 
 **Thank You!**
