@@ -29,8 +29,3 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 # This handles files in src/libs/
 $(OBJDIR)/%.o: $(LIBDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
-
-
-# Clean up
-clean:
-	rm -rf $(OBJDIR) $(BINDIR)
