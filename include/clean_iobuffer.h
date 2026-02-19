@@ -42,22 +42,15 @@ Author:
 
 - Ideally, you should call it right after grabing input in
 your code. It will analyze the buffer and clean only if there's garbage.
+
+- The header logic is in "clean_iobuffer.c".
 */
 
 
 
 // Libraries/Headers:
+#pragma once
 #include <stdio.h>
 
-// --- Main ---
-int clean_io()
-{
-	int x;
-	int buffer;
-	while ((buffer = getchar()) != '\n' && buffer != EOF)
-	
-		x = buffer;
-		
-	
-}
-// --- Main End ---
+// Cleaning function:
+int clean_io(void);
