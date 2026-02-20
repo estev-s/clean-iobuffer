@@ -22,7 +22,7 @@ Author:
 	{
 		char input[100] = {0};
 		printf("type your input: ");
-		scanf("%s", &input);
+		scanf("%s", input);
 		clean_io();
 
 	}
@@ -30,20 +30,19 @@ Author:
 .. code-example2:: c (better way: get, clean then parse)
 	{
 		char input[100] = {0};
-		char answer = '\0';
 		printf("type the answer: ");
 		fgets(input, sizeof(input), stdin);
 		clean_io();
-		sscanf(input, "%s", &answer);
+		sscanf("%s", input);
 	}
 
 
-- The clean_io() will clean the input stream buffer.
+The clean_io() will clean the input stream buffer.
 
-- Ideally, you should call it right after grabing input in
+Ideally, you should call it right after grabing input in
 your code. It will analyze the buffer and clean only if there's garbage.
 
-- The header logic is in "clean_iobuffer.c".
+The header logic is in "clean_iobuffer.c".
 */
 
 
@@ -53,4 +52,4 @@ your code. It will analyze the buffer and clean only if there's garbage.
 #include <stdio.h>
 
 // Cleaning function:
-int clean_io(void);
+void clean_io(void);

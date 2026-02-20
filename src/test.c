@@ -6,26 +6,33 @@ int main(void)
 	{
 
 		char input[6] = {0};
-		char answer = '\0';
 		printf("type your answer: ");
 		fgets(input, sizeof(input), stdin);
 		clean_io();
-		sscanf(input, "%s", &answer);
-		printf("%s", answer);
-		printf("\n");
+		sscanf("%s", input);
+		printf("%s\n", input);
 	}
 
 
 	{
 		char input[6] = {0};
+		printf("type your char  number: ");
+		fgets(input, sizeof(input), stdin);
+		clean_io();
+		sscanf("%s", input);
+		printf("%s\n", input);
+	}
+
+	{
+		char input[6] = {0};
 		int number = 0;
-		printf("type your number: ");
+		printf("type your char int  number: ");
 		fgets(input, sizeof(input), stdin);
 		clean_io();
 		sscanf(input, "%i", &number);
-		printf("%i", number);
-		printf("\n");
+		printf("%i\n", number);
 	}
+
 
 	return 0;
 }

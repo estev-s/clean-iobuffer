@@ -20,14 +20,16 @@ Author:
 #include "clean_iobuffer.h"
 
 // --- Main ---
-int clean_io(void)
+void clean_io(void)
+/*  
+ * If buffer isn't empty, it will loop and clean until '\n' or EOF.
+ * Removing all bytes from the buffer and putting inside the stack,
+ * and then, zeroing the stack.
+*/
 {
-	int x;
-	int buffer;
-	while ((buffer = getchar()) != '\n' && buffer != EOF)
-	
-		x = buffer;
-		
-	
+	int in_buffer = 0;
+	while ((in_buffer = getchar()) != '\n' && in_buffer != EOF) {
+
+	}
 }
 // --- Main End ---
