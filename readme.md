@@ -17,12 +17,11 @@ There are instructions inside the .h file.
 
     #include <clean_iobuffer.h>;
 
-- If the header is placed inside a /libs in your project's directory:
+- If the header is placed inside your project's directory:
 
     #include "clean_iobuffer.h";
 
-- Calling:
-
-    clean_io();
+***NOTE:***
+*Ignore Makefile and test.c. They were created only to test and validade the header's function.*
 
 **Thank You!**
