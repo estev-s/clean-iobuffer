@@ -27,8 +27,8 @@ void clean_io(void)
  * and then, zeroing the stack.
 */
 {
-	int in_buffer = 0;
-	while ((in_buffer = getchar()) != '\n' && in_buffer != EOF) {
+	int input_buffer = 0;
+	while ((input_buffer = getchar()) != '\n' && input_buffer != EOF) {
 
 	}
 }
